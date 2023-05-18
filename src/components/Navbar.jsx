@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Links from './Links'
 import Button from './Button'
+import Logo from '../img/aelmi.png'
 
 const Navbar = () => {
 
@@ -12,9 +13,9 @@ const Navbar = () => {
                         flex items-center font-[Poppins] text-gray-800'>
 
                     <span className='text-3xl text-fuchsia-700 mr-1 pt-2 hover:text-orange-300 duration-500'>
-                        <a href="/"><ion-icon name="logo-ionic"></ion-icon></a>
+                        <a href="/"><img className='object-scale-down h-10 w-10 pb-2' src={Logo} alt="logo" /></a>
                     </span>
-                    Navbar
+                    AELMI
                 </div>
 
                 <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
