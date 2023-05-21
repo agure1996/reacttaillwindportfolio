@@ -1,41 +1,36 @@
 import React, { useState } from 'react'
 import Links from './Links'
-import Button from './Button'
-import Logo from '../img/aelmi.png'
+
+import Logo from '../img/aelmi2.png'
 
 const Navbar = () => {
 
     let [open, setOpen] = useState(false);
     return (
-        <div className='shadow-md w-full fixed top-0 left-0'>
-            <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
+        <div className='shadow-md w-full fixed top-0 left-0 opacity-75 z-10'>
+            <div className='md:flex items-center  justify-between bg-black py-4 md:px-10 md:py-2 px-0 '>
                 <div className='font-bold text-2xl cursor-pointer
-                        flex items-center font-[Poppins] text-gray-800'>
+                        flex items-center font-sans  text-white'>
 
-                    <span className='text-3xl text-fuchsia-700 mr-1 pt-2 hover:text-orange-300 duration-500'>
-                        <a href="/"><img className='object-scale-down h-10 w-10 pb-2' src={Logo} alt="logo" /></a>
+                    <span className='text-3xl text-cyan-700 mr-1 pt-2 hover:text-orange-300 duration-500 '>
+                        <a href="/"><img className='object-scale-down h-20 w-36 ' src={Logo} alt="logo" /></a>
                     </span>
-                    AELMI
+                    
                 </div>
-
-                <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+                <div onClick={() => setOpen(!open)} className='text-3xl absolute right-10 top-10 cursor-pointer md:hidden text-white'>
                     <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
                 </div>
-                <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full 
-                        md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 opacity-100' : 'top-[-490px] opacity-0 '} md:opacity-100`}>
+                <ul className={`md:flex md:items-center md:pt-0 pb-0 absolute md:static bg-black text-white md:z-auto z-[-1] left-0 w-full 
+                        md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${open ? ' ' : 'top-[-490px] opacity-0 '} md:opacity-100`}>
                     {Links.map((link) => (  
-                        <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7'>
-                            <a href={link.link} className='text-gray-800 hover:text-gray-400 duration-500'>{link.name}</a>
+                        <li key={link.name} className='md:ml-8  text-xl md:my-0 my-7 '>
+                            <a href={link.link} className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>{link.name}</a>
                         </li>
                     ))}
 
-                    <Button >
-                        Sign Up
-                    </Button>
-
+                    
                 </ul>
             </div>
-
         </div>
     )
 }
