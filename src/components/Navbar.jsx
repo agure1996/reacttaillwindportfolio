@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import Links from './Links'
+// import Links from './Links'
+import { Link } from 'react-router-dom';
 
 import Logo from '../img/aelmi2.png'
+
 
 const Navbar = () => {
 
@@ -22,17 +24,22 @@ const Navbar = () => {
                 </div>
                 <ul className={`md:flex md:items-center md:pt-0 pb-0 absolute md:static bg-black text-white md:z-auto z-[-1] left-0 w-full 
                         md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in-out ${open ? ' ' : 'top-[-490px] opacity-0 '} md:opacity-100`}>
-                    {Links.map((link) => (  
-                        <li key={link.name} className='md:ml-8  text-xl md:my-0 my-7 '>
-                            <a href={link.link} className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>{link.name}</a>
-                        </li>
-                    ))}
-
-                    
-                </ul>
+                   
+                    <li className='md:ml-8  text-xl md:my-0 my-7 '><Link to="/about" className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>About Us</Link></li>
+                    <li className='md:ml-8  text-xl md:my-0 my-7 '><Link to="/contact" className=' text-opacity-100 text-white hover:text-gray-400 duration-500' >Contact Us</Link></li>
+                    <li className='md:ml-8  text-xl md:my-0 my-7 '><Link to="/learning" className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>Learning</Link></li>
+                    <li className='md:ml-8  text-xl md:my-0 my-7 '><Link to="/news" className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>News</Link></li>
+                    <li className='md:ml-8  text-xl md:my-0 my-7 '><Link to="/portfolio" className=' text-opacity-100 text-white hover:text-gray-400 duration-500'>Portfolio</Link></li>
+                     </ul>
             </div>
         </div>
     )
 }
 
+
+
+    
+
+
 export default Navbar
+
